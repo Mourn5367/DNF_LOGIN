@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'kr.ac.kopo.su'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starter Security for authentication and authorization
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // Spring Boot Starter Web for building web applications (includes Tomcat)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Spring Boot Starter Thymeleaf for server-side HTML templating
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // Spring Boot DevTools for hot-reloading (optional, but useful during development)
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // Spring Boot Starter Test for testing Spring Boot applications
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // Spring Security Test for testing security configurations
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

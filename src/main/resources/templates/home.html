@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="css/home.css"> <!-- Correct path for CSS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/home.js"></script> <!-- Correct path for JS -->
+
+
+</head>
+<body>
+<div class="container">
+    <div class="left_side"></div>
+    <div class="middle">
+        <table>
+            <thead class="thead">
+            <tr>
+                <td><input type="checkbox" class = "check" id = "check1"><label for="check1"></label></td>
+                <th>아이콘</th>
+                <th>이름</th>
+                <th>평균가</th>
+                <th>최저가</th>
+                <th>삭제</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Dynamic content will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <div class="right_side"></div>
+    <div class="navbar">
+        <a href="/home.html" class = "item"> <!-- Correct path for HTML -->
+            <img src="assets/home.svg" alt=""> <!-- Correct path for assets -->
+            <span>HOME</span>
+        </a>
+        <a href="/search.html" class = "item"> <!-- Correct path for HTML -->
+            <img src="assets/magnify.svg" alt=""> <!-- Correct path for assets -->
+            <span>SEARCH</span>
+        </a>
+        <!-- Logout link added here -->
+        <a href="/perform_logout" class="item"> <!-- Spring Security logout URL -->
+            <img src="assets/account-circle.svg" alt=""> <!-- Using existing icon for logout -->
+            <span>LOG OUT</span>
+        </a>
+    </div>
+    <a href="https://developers.neople.co.kr/" class="footer">
+        <img src="assets/column_col.png" alt="neople"> <!-- Correct path for assets -->
+    </a>
+</div>
+</body>
+</html>

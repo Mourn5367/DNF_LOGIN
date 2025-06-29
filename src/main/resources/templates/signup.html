@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- Add Thymeleaf namespace -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="css/signup.css"> <!-- Correct path for CSS -->
+</head>
+<body>
+<div class="container">
+    <div class="signtitle">회원가입</div>
+    <!-- action을 회원가입 처리 URL로 변경, method를 post로 변경 -->
+    <form class="signupform" action="/signup" method="post" autocomplete="on">
+        <!-- Keep the entered ID value if it was provided -->
+        <input class="inputid" type="text" name="inputid" placeholder="아이디" th:value="${inputid}" required><br>
+        <!-- 중복확인 버튼은 현재 예시에서는 서버 단에서 처리하지 않으므로, 이 기능이 필요하다면 별도의 JS 로직과 백엔드 엔드포인트가 필요합니다. -->
+        <input class="formbutton" type="button" value="중복확인"><br>
+        <div class="password-container">
+            <input class="inputpw" type="password" name="inputpw" placeholder="비밀번호" required>
+        </div>
+        <div class="password-container">
+            <!-- Name attribute for confirmation password -->
+            <input class="confirmpw" type="password" name="confirm_inputpw" placeholder="비밀번호 확인" required>
+        </div>
+        <input class="signupbutton" type="submit" value="회원가입"> <!-- type을 submit으로 변경 -->
+
+        <!-- 회원가입 실패 메시지 표시 -->
+        <div th:if="${error == 'exists'}" style="color: red; margin-top: 10px; text-align: center;">
+            이미 존재하는 아이디입니다.
+        </div>
+        <div th:if="${error == 'passwordMismatch'}" style="color: red; margin-top: 10px; text-align: center;">
+            비밀번호와 비밀번호 확인이 일치하지 않습니다.
+        </div>
+    </form>
+    <div class="navbar">
+        <a href="/home.html" class="item"> <!-- Correct path for HTML -->
+            <img src="assets/home.svg" alt=""> <!-- Correct path for assets -->
+            <span>HOME</span>
+        </a>
+        <a href="/search.html" class="item"> <!-- Correct path for HTML -->
+            <img src="assets/magnify.svg" alt=""> <!-- Correct path for assets -->
+            <span>SEARCH</span>
+        </a>
+        <a href="/login.html" class="item"> <!-- Correct path for HTML -->
+            <img src="assets/account-circle.svg" alt=""> <!-- Correct path for assets -->
+            <span>LOG IN/OUT</span>
+        </a>
+    </div>
+    <a href="https://developers.neople.co.kr/" class="footer">
+        <img src="assets/column_col.png" alt="neople"> <!-- Correct path for assets -->
+    </a>
+</div>
+</body>
+</html>

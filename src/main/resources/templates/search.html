@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+    <!-- CSS 파일 경로를 절대 경로로 수정 -->
+    <link rel="stylesheet" href="/css/search.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- JavaScript 파일 경로를 절대 경로로 수정 -->
+    <script src="/js/search.js"></script>
+
+</head>
+
+<body>
+<div class = modal_container>
+    <div class ="modal">
+        <div class = "modal_page">
+            <div id="modal_text" class = "modal_text">
+            </div>
+            <button class = "add_button_modal" type="button" onclick="addItem()">추가하기
+            </button><button class = "reject_button_modal" type="button" onclick = "closeModal()">
+            취소하기</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="left_side"></div>
+    <div class="middle_top">
+        <div class="box">
+            <section class="searchbar">
+                <label class="searchtext" for="search">검색</label>
+                <form class="searchform" name="search" action="" method="get" autocomplete="on" onsubmit="handleFormSubmit(event)">
+                    <input class="search" type="text" name="searchText" placeholder="아이템명을 입력해 주세요">
+                    <button class="searchbutton" type="button" onclick="searchId()"></button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <div class="middle">
+        <table>
+            <thead class="thead">
+            <tr>
+                <th>아이콘</th>
+                <th>이름</th>
+                <th>최저가</th>
+                <th>추가</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="right_side"></div>
+    <div class="navbar">
+        <a href="/home.html" class="item"> <!-- HTML 파일 경로도 절대 경로로 일관성 있게 수정 -->
+            <img src="/assets/home.svg" alt=""> <!-- 이미지 경로도 절대 경로로 수정 -->
+            <span>HOME</span>
+        </a>
+        <a href="/search.html" class="item"> <!-- HTML 파일 경로도 절대 경로로 일관성 있게 수정 -->
+            <img src="/assets/magnify.svg" alt=""> <!-- 이미지 경로도 절대 경로로 수정 -->
+            <span>SEARCH</span>
+        </a>
+        <a href="/login.html" class="item"> <!-- HTML 파일 경로도 절대 경로로 일관성 있게 수정 -->
+            <img src="/assets/account-circle.svg" alt=""> <!-- 이미지 경로도 절대 경로로 수정 -->
+            <span>LOG IN/OUT</span>
+        </a>
+    </div>
+    <a href="https://developers.neople.co.kr/" class="footer">
+        <img src="/assets/column_col.png" alt="neople"> <!-- 이미지 경로도 절대 경로로 수정 -->
+    </a>
+</div>
+</body>
+</html>

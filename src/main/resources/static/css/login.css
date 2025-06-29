@@ -1,0 +1,204 @@
+@font-face
+{
+    src: url("../assets/NotoSansKR-VariableFont_wght.ttf");
+    font-family: "noto";
+}
+*{
+    font-family: "noto";
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+}
+a:visited
+{
+    color:black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "n n n"
+        ". t ."
+        ". i ."
+        ". w .";
+    height: 100%;
+    width: 100%;
+}
+
+.signtitle
+{
+    justify-self: center;
+    margin-top: 10%;
+    grid-area: t;
+    padding: 0;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.signinform {
+    margin-top: 5%;
+    grid-area: i;
+    justify-self: center;
+}
+.inputid, .inputpw, .loginbutton, .signupbutton {
+    min-width: 300px;
+    max-width: 350px;
+    width: 30vw;
+    box-sizing: border-box;
+}
+.inputid
+{
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
+    height: 30px;
+}
+.password-container
+{
+    position: relative;
+}
+.password-container::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 57%;
+    transform: translateY(-50%);
+    background-image: url("../assets/eye-outline.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+.inputpw
+{
+    padding-right: 40px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
+    height: 30px;
+    margin-top : 20px;
+    margin-bottom: 10px;
+}
+.loginbutton, .signupbutton
+{
+    width: 30vw;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    margin-top : 20px;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    height: 45px;
+    color : white;
+    cursor: pointer;
+    font-size: 17px;
+}
+.loginbutton
+{
+    background-color: rgba(0, 0, 0, 1);
+    color : white;
+}
+.signupbutton{
+    background-color:rgba(77, 71, 195, 1);
+    color : white;
+}
+
+.navbar {
+    color: black;
+    grid-area: n;
+    width: 100%;
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.item:hover {
+    background-color: rgb(128, 128, 128);
+}
+.item {
+    color: black;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.item img {
+    height: 30px;
+    background-position: center;
+}
+
+.item span {
+    font-family: "blade";
+    font-weight: bold;
+    margin-top: 7px;
+    font-size: 100%;
+}
+
+.footer {
+    grid-area: w;
+    width: 100%;
+    background: #ffffff;
+    color: white;
+    text-align: center;
+}
+
+.footer img {
+    width: 200px;
+    height: 100%;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    html, body {
+        height: 100%;
+    }
+
+    .container {
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        ". t ."
+        ". i ."
+        "n n n";
+        height: 100%;
+        width: 100%;
+        margin: 0;
+
+    }
+
+    .left_side, .right_side, .footer {
+        display: none;
+    }
+    .signtitle
+    {
+        justify-self: center;
+        margin-top: 15%;
+        grid-area: t;
+        padding: 0;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    .navbar {
+        color: black;
+        width: 100%;
+        height: 65px;
+        display: flex;
+    }
+
+}

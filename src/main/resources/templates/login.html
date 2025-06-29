@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- Add Thymeleaf namespace -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css"> <!-- Correct path for CSS -->
+</head>
+<body>
+<div class="container">
+    <div class="signtitle">로그인</div>
+    <!-- action을 Spring Security의 로그인 처리 URL로 변경 -->
+    <form class="signinform" action="/perform_login" method="post">
+        <!-- input name을 username으로 변경 -->
+        <input class="inputid" type="text" name="username" placeholder="아이디" required><br>
+        <div class="password-container">
+            <!-- input name을 password로 변경 -->
+            <input class="inputpw" type="password" name="password" placeholder="비밀번호" required>
+        </div>
+        <!-- type을 submit으로 변경 -->
+        <input class="loginbutton" type="submit" value="로그인"><br>
+        <a href="/signup.html"> <!-- Link to signup page -->
+            <input class="signupbutton" type="button" value="회원가입">
+        </a>
+        <!-- 로그인 실패 메시지 표시 (Thymeleaf 사용) -->
+        <div th:if="${param.error}" style="color: red; margin-top: 10px; text-align: center;">
+            아이디 또는 비밀번호가 잘못되었습니다.
+        </div>
+        <!-- 회원가입 성공 메시지 표시 (Thymeleaf 사용) -->
+        <div th:if="${param.registered}" style="color: green; margin-top: 10px; text-align: center;">
+            회원가입이 완료되었습니다. 로그인 해주세요.
+        </div>
+    </form>
+    <div class="navbar">
+        <a href="/home.html" class="item"> <!-- Correct path for HTML -->
+            <img src="assets/home.svg" alt=""> <!-- Correct path for assets -->
+            <span>HOME</span>
+        </a>
+        <a href="/search.html" class="item"> <!-- Correct path for HTML -->
+            <img src="assets/magnify.svg" alt=""> <!-- Correct path for assets -->
+            <span>SEARCH</span>
+        </a>
+        <a href="/login.html" class="item"> <!-- Correct path for HTML -->
+            <img src="assets/account-circle.svg" alt=""> <!-- Correct path for assets -->
+            <span>LOG IN/OUT</span>
+        </a>
+    </div>
+    <a href="https://developers.neople.co.kr/" class="footer">
+        <img src="assets/column_col.png" alt="neople"> <!-- Correct path for assets -->
+    </a>
+</div>
+</body>
+</html>
